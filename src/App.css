@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+@import 'https://fonts.googleapis.com/css?family=Hanken+Grotesk:wght@0,300;0,400;0,700;1,300;1,400;1,700';
+
+html {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  font-family: 'Hanken Grotesk';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+:root {
+  --bg-color: #E8E2E2;
+  --accent-color: white;
+  --text-color: #413543;
+  ;
+}
+
+.main {
+  text-align: center;
+  display: grid;
+  background-color: var(--text-color);
+  border-radius: 20px;
+}
+
+.main span {
+  padding-block: 2rem;
+  font-size: 36px;
+  font-weight: bold;
+  color: white
+}
+
+.square {
+  margin: .5rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;
+  font-weight: bold;
+  border: none;
+  width: 100px;
+  height: 100px;
+}
+
+.square img {
+  transition: .1s ease-in;
+  transform: rotateY(90deg);
+}
+
+.active img {
+  transform: rotateY(0deg);
+}
+
+.correct {
+  background-color: #408E91;
+}
+
+.wrong {
+  background-color: #EB455F;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0rem 4rem 1rem 4rem;
+}
+
+.media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 6rem;
+  margin-bottom: 1rem;
+}
+
+.media p {
   color: white;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+.media button {
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.media img {
+  aspect-ratio: 1 / 1;
+  width: 30px;
 }
